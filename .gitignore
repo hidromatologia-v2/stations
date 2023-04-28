@@ -1,3 +1,5 @@
-node_modules
 coverage
 coverage.txt
+vendor
+node_modules
+.env
