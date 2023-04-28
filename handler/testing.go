@@ -22,7 +22,6 @@ func defaultHandler(t *testing.T) (expect *httpexpect.Expect, h *Handler, statio
 	server := httptest.NewServer(h)
 	expect = httpexpect.Default(t, server.URL+APIRoute)
 	return expect, h, stationName, func() {
-		c.Close()
 		server.Close()
 	}
 }

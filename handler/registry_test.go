@@ -16,6 +16,7 @@ import (
 func TestRegistry(t *testing.T) {
 	t.Run("Valid", func(tt *testing.T) {
 		expect, h, stationName, closeFunc := defaultHandler(tt)
+		defer h.Close()
 		defer closeFunc()
 		u := tables.RandomUser()
 		assert.Nil(tt, h.Controller.DB.Create(u).Error)

@@ -12,6 +12,7 @@ import (
 func TestStation(t *testing.T) {
 	t.Run("Valid", func(tt *testing.T) {
 		expect, h, _, closeFunc := defaultHandler(tt)
+		defer h.Close()
 		defer closeFunc()
 		u := tables.RandomUser()
 		assert.Nil(tt, h.Controller.DB.Create(u).Error)
@@ -23,7 +24,8 @@ func TestStation(t *testing.T) {
 			Status(http.StatusOK)
 	})
 	t.Run("Unauthorized", func(tt *testing.T) {
-		expect, _, _, closeFunc := defaultHandler(tt)
+		expect, h, _, closeFunc := defaultHandler(tt)
+		defer h.Close()
 		defer closeFunc()
 		expect.GET(StationRoute).
 			WithHeader(XAuthKeyHeader, random.String()).
