@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/hidromatologia-v2/stations/compare/v0.0.2...v0.0.3) (2023-04-28)
+
+
+### Bug Fixes
+
+* fixed newer unit tests ([254ee13](https://github.com/hidromatologia-v2/stations/commit/254ee130f5180c3b171b7016c174232df41dac29))
+* improved coverage by testing invalid json request ([23032ce](https://github.com/hidromatologia-v2/stations/commit/23032ce403fec355be9c7bd55e07d1450401ec50))
+* increased coverage by testing close function ([6cd70fb](https://github.com/hidromatologia-v2/stations/commit/6cd70fbbf9f3ccdfdb7c1c32b87a95b24dd0ad82))
+
 ### 0.0.2 (2023-04-28)
 
 ### 0.0.1 (2023-04-28)
