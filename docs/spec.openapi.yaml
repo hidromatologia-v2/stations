@@ -1,0 +1,121 @@
+openapi: 3.0.3
+info:
+  title: Stations
+
+  license:
+    name: BSD 3-Clause
+    url: https://github.com/hidromatologia-v2/stations/blob/main/LICENSE
+  version: TBA
+tags:
+  - name: Station
+  - name: Registries
+paths:
+  /api/station:
+    get:
+      description: Queries the details of the station, including sensors
+      security:
+        - apiKey: [ ]
+      tags:
+        - Station
+      responses:
+        '200':
+          description: Returns the station details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/station'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response'
+  /api/registry:
+    put:
+      description: Push registry
+      security:
+        - apiKey: [ ]
+      tags:
+        - Registries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/registry'
+      responses:
+        '201':
+          description: Registry pushed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response'
+
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-Auth-Key
+  schemas:
+    response:
+      type: object
+      properties:
+        message:
+          type: string
+    station:
+      type: object
+      properties:
+        uuid:
+          type: string
+        userUUID:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        latitude:
+          type: number
+        longitude:
+          type: number
+        apiKey:
+          type: string
+        sensors:
+          type: array
+          items:
+            $ref: '#/components/schemas/sensor'
+    sensor:
+      type: object
+      properties:
+        uuid:
+          type: string
+        stationUUID:
+          type: string
+        type:
+          type: string
+    registry:
+      type: object
+      properties:
+        sensorUUID:
+          type: string
+        value:
+          type: number
