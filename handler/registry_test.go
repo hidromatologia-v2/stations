@@ -79,6 +79,6 @@ func TestRegistry(t *testing.T) {
 			WithHeader("Content-Type", "application/json").
 			WithBytes([]byte("{")).
 			Expect().
-			Status(http.StatusInternalServerError)
+			Status(http.StatusBadRequest)
 	})
 }
