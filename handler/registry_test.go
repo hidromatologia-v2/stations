@@ -66,4 +66,19 @@ func TestRegistry(t *testing.T) {
 			msg.Ack()
 		}
 	})
+	t.Run("Invalid request", func(tt *testing.T) {
+		expect, h, _, closeFunc := defaultHandler(tt)
+		defer h.Close()
+		defer closeFunc()
+		u := tables.RandomUser()
+		assert.Nil(tt, h.Controller.DB.Create(u).Error)
+		s := tables.RandomStation(u)
+		assert.Nil(tt, h.Controller.DB.Create(s).Error)
+		expect.PUT(RegistryRoute).
+			WithHeader(XAuthKeyHeader, s.APIKey).
+			WithHeader("Content-Type", "application/json").
+			WithBytes([]byte("{")).
+			Expect().
+			Status(http.StatusInternalServerError)
+	})
 }
