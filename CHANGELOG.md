@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.5 (2023-04-29)
+
+
+### Bug Fixes
+
+* updated dependencies ([159fed6](https://github.com/hidromatologia-v2/stations/commit/159fed6a79960b91a58bf8b17554bd108a6d50ea))
+
 ### 0.0.4 (2023-04-28)
 
 ### [0.0.3](https://github.com/hidromatologia-v2/stations/compare/v0.0.2...v0.0.3) (2023-04-28)
