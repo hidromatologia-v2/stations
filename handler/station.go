@@ -9,7 +9,7 @@ import (
 
 func (h *Handler) Station(ctx *gin.Context) {
 	station := ctx.MustGet(StationVariable).(*tables.Station)
-	result, qErr := h.Controller.QueryStation(station)
+	result, qErr := h.Controller.QueryStationNoAPIKey(station)
 	if qErr != nil {
 		ctx.AbortWithStatusJSON(http.StatusInternalServerError, Response{Message: qErr.Error()})
 		return
