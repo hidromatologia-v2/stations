@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.6 (2023-07-12)
+
+
+### Bug Fixes
+
+* updated docker compose ([db01d2d](https://github.com/hidromatologia-v2/stations/commit/db01d2d4090b81b7acbf72c078e63facb273b154))
+
 ### 0.0.5 (2023-04-29)
 
 
