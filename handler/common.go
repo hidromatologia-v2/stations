@@ -1,7 +1,7 @@
 package handler
 
 const (
-	APIRoute      = "/api"
+	APIRoute      = ""
 	StationRoute  = "/station"
 	RegistryRoute = "/registry"
 )

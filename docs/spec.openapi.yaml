@@ -10,7 +10,7 @@ tags:
   - name: Station
   - name: Registries
 paths:
-  /api/station:
+  /station:
     get:
       description: Queries the details of the station, including sensors
       security:
@@ -36,7 +36,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/response'
-  /api/registry:
+  /registry:
     put:
       description: Push registry
       security:

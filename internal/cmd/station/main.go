@@ -22,7 +22,7 @@ func main() {
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:  "url",
-				Value: "http://127.0.0.1:5000/api",
+				Value: "http://127.0.0.1:5000",
 				Usage: "Stations URL",
 			},
 		},
