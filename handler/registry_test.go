@@ -24,7 +24,6 @@ func TestRegistry(t *testing.T) {
 		assert.Nil(tt, h.Controller.DB.Create(s).Error)
 		sensorUUID := s.Sensors[0].UUID
 		expect.PUT(RegistryRoute).
-			WithHeader(XAuthKeyHeader, s.APIKey).
 			WithJSON([]tables.SensorRegistry{
 				{
 					SensorUUID: sensorUUID,
@@ -39,6 +38,7 @@ func TestRegistry(t *testing.T) {
 					Value:      12,
 				},
 			}).
+			WithHeader(XAuthKeyHeader, s.APIKey).
 			Expect().
 			Status(http.StatusCreated)
 		registries, queryErr := h.Controller.Historical(&models.HistoricalFilter{
