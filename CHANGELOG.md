@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.7 (2023-08-04)
+
+
+### Bug Fixes
+
+* removed prefetch ([6c19108](https://github.com/hidromatologia-v2/stations/commit/6c1910835870f3f91842dd3453b3bcb097d69938))
+
 ### 0.0.6 (2023-07-12)
 
 
