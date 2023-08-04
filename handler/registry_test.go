@@ -52,7 +52,7 @@ func TestRegistry(t *testing.T) {
 		var msgs []*memphis.Msg
 		for i := 0; i < 100; i++ {
 			var fErr error
-			msgs, fErr = consumer.Fetch(10)
+			msgs, fErr = consumer.Fetch(10, true)
 			if fErr != nil && !strings.Contains(fErr.Error(), "time out") {
 				tt.Fatal(fErr)
 			}
