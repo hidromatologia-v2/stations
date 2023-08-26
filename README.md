@@ -1,6 +1,9 @@
 # Stations
 
-[![Build](https://github.com/hidromatologia-v2/stations/actions/workflows/build.yaml/badge.svg)](https://github.com/hidromatologia-v2/stations/actions/workflows/build.yaml)
+[![Coverage](https://github.com/hidromatologia-v2/stations/actions/workflows/codecov.yaml/badge.svg)](https://github.com/hidromatologia-v2/stations/actions/workflows/codecov.yaml)
+[![Release](https://github.com/hidromatologia-v2/stations/actions/workflows/release.yaml/badge.svg)](https://github.com/hidromatologia-v2/stations/actions/workflows/release.yaml)
+[![Tagging](https://github.com/hidromatologia-v2/stations/actions/workflows/tagging.yaml/badge.svg)](https://github.com/hidromatologia-v2/stations/actions/workflows/tagging.yaml)
+[![Test](https://github.com/hidromatologia-v2/stations/actions/workflows/testing.yaml/badge.svg)](https://github.com/hidromatologia-v2/stations/actions/workflows/testing.yaml)
 [![codecov](https://codecov.io/gh/hidromatologia-v2/stations/branch/main/graph/badge.svg?token=TKF3Y8FJJ3)](https://codecov.io/gh/hidromatologia-v2/stations)
 [![Go Report Card](https://goreportcard.com/badge/github.com/hidromatologia-v2/stations)](https://goreportcard.com/report/github.com/hidromatologia-v2/stations)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/hidromatologia-v2/stations)
