@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.9 (2023-08-26)
+
+
+### Bug Fixes
+
+* update go version ([fc590d0](https://github.com/hidromatologia-v2/stations/commit/fc590d0dc6e14b5338dba1cf31244db3fb9a8817))
+
 ### 0.0.8 (2023-08-26)
 
 ### 0.0.7 (2023-08-04)
