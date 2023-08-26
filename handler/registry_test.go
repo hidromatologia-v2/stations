@@ -8,6 +8,7 @@ import (
 
 	"github.com/hidromatologia-v2/models"
 	"github.com/hidromatologia-v2/models/common/connection"
+	"github.com/hidromatologia-v2/models/common/random"
 	"github.com/hidromatologia-v2/models/tables"
 	"github.com/memphisdev/memphis.go"
 	"github.com/stretchr/testify/assert"
@@ -46,7 +47,7 @@ func TestRegistry(t *testing.T) {
 		})
 		assert.Nil(tt, queryErr)
 		assert.Len(tt, registries, 3)
-		consumer := connection.NewConsumer(tt, stationName)
+		consumer := connection.NewConsumer(tt, stationName, random.String()[:64])
 		tick := time.NewTicker(time.Millisecond)
 		defer tick.Stop()
 		var msgs []*memphis.Msg

@@ -9,6 +9,7 @@ import (
 	"github.com/hidromatologia-v2/models/common/postgres"
 	"github.com/hidromatologia-v2/stations/handler"
 	"github.com/memphisdev/memphis.go"
+	uuid "github.com/satori/go.uuid"
 	"github.com/sethvargo/go-envconfig"
 )
 
@@ -34,7 +35,7 @@ func newProducer(config *Config) *memphis.Producer {
 	logFatalErr(connErr)
 	producer, producerErr := conn.CreateProducer(
 		config.Producer.Station,
-		config.Producer.Producer,
+		config.Producer.Producer+uuid.NewV4().String(),
 	)
 	logFatalErr(producerErr)
 	return producer
