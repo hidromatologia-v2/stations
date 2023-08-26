@@ -11,6 +11,20 @@ networks:
       driver: default
 
 services:
+  messages:
+    networks:
+      - server
+      - memphis
+    container_name: server-messages
+    restart: unless-stopped
+    image: ghcr.io/hidromatologia-v2/messages:latest
+  alerts:
+    networks:
+      - server
+      - memphis
+    container_name: server-alerts
+    restart: unless-stopped
+    image: ghcr.io/hidromatologia-v2/alerts:latest
   postgres:
     networks:
       - server
@@ -23,6 +37,23 @@ services:
       POSTGRES_DB: sulcud
       POSTGRES_USER: sulcud
       POSTGRES_PASSWORD: sulcud
+  redis:
+    networks:
+      - server
+    container_name: server-redis
+    image: redis:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6379:6379"
+  mailhog:
+    image: mailhog/mailhog
+    container_name: server-mailhog
+    restart: unless-stopped
+    networks:
+      - server  # disable saving logs
+    ports:
+      - 127.0.0.1:1025:1025
+      - 127.0.0.1:8025:8025
   # Mephis configutarion
   memphis-metadata:
     image: memphisos/memphis-metadata:docker-15.2.0-debian-11-r27
